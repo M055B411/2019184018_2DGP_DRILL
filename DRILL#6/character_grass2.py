@@ -7,9 +7,10 @@ grass = load_image('grass.png')
 character = load_image('character.png')
 
 def render_ALL(x, y):
-    clear_canvas_now()
-    grass.draw_now(400,30)
-    character.draw_now(x,y)
+    clear_canvas()
+    grass.draw(400,30)
+    character.draw(x,y)
+    update_canvas()
     delay(0.01)
 
 def run_RECT():
