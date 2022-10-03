@@ -49,7 +49,10 @@ pos = 1
 while running:
     clear_canvas()
     tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * pos, 100, 100, x, y)
+    if dirx == 0 and diry == 0:
+        character.clip_draw(frame * 100, 100 * (pos + 2), 100, 100, x, y)
+    else:
+        character.clip_draw(frame * 100, 100 * pos, 100, 100, x, y)
     update_canvas()
 
     handle_events()
@@ -58,9 +61,10 @@ while running:
     x += dirx * 5
     y += diry * 5
 
-    pos = dirx
-    if pos < 0:
+    if dirx == -1:
         pos = 0
+    elif dirx == 1:
+        pos = 1
 
     if x < 0:
         x = 0
