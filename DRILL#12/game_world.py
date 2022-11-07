@@ -1,6 +1,6 @@
 # Layer 0: Background Objects
 # Layer 1: Background Objects
-objects = [[], []]
+objects = [[], [], []]
 
 
 
